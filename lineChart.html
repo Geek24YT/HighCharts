@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HighCharts</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+</head>
+<body>
+    <h2>Line Chart</h2>
+    <div id="container"></div>
+
+    <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded",()=>{
+        Highcharts.chart("container",{
+            title:{text:"My Height Chart"},
+            yAxis:{
+                title:{text:"Height in CM"}
+            },
+
+            xAxis:{
+                categories:['2000','2001','2003','2004','2005']
+            },
+            series:[{
+                name:"Chitrang",
+                data:[160,162,164,168,170   ]
+            },
+            {
+                name:"Ram",
+                data:[150,152,160,167,171   ]
+            }
+        ]
+        })
+    })
+    </script>
+
+</body>
+</html>

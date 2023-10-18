@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HighCharts</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+</head>
+<body>
+    <h2>Line Chart - Custom Tool Tip</h2>
+    <div id="container"></div>
+
+    <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded",()=>{
+        Highcharts.chart("container", {
+  title: {
+    text: "My Height Chart"
+  },
+  yAxis: {
+    title: {
+      text: "Height in CM"
+    }
+  },
+  xAxis: {
+    categories: ['2000','2001','2003','2004','2005']
+  },
+  tooltip: {
+    backgroundColor: "rgba(255, 255, 255, 0.85)",
+    borderColor: "#000",
+    borderRadius: 5,
+    borderWidth: 1,
+    headerFormat: '<span style="font-size: 14px; font-weight: bold">{point.key}</span><br/>',
+    pointFormat: '<span style="color:{point.color}">\u25CF</span> {series.name}: <b>{point.y}</b><br/>',
+    shared: true,
+    style: {
+      color: "#333",
+      fontSize: "12px"
+    }
+  },
+  series: [{
+      name: "Chitrang",
+      data: [160, 162, 164, 168, 170]
+    },
+    {
+      name: "Ram",
+      data: [150, 152, 160, 167, 171]
+    }
+  ]
+});
+    })
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HighCharts</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+</head>
+<body>
+    <h2>Donut Chart</h2>
+    <div id="container"></div>
+
+    <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded",()=>{
+        Highcharts.chart('container', {
+    chart: {
+        type: 'pie',
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false
+    },
+    title: {
+        text: 'Mobile Brand Sales'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            innerSize: '50%',
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+            },
+            showInLegend: true
+        }
+    },
+    series: [{
+        name: 'Brands',
+        colorByPoint: true,
+        data: [{
+            name: 'Apple',
+            y: 30
+        }, {
+            name: 'Samsung',
+            y: 25
+        }, {
+            name: 'Huawei',
+            y: 20
+        }, {
+            name: 'Xiaomi',
+            y: 15
+        }, {
+            name: 'Others',
+            y: 10
+        }]
+    }]
+});
+
+    })
+    </script>
+
+</body>
+</html>
